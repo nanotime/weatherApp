@@ -28,12 +28,14 @@ export const Button: FC<Props> = ({
   children,
   theme = 'btn-primary',
   size = 'btn-md',
+  btnShape,
   tw,
   ...props
 }) => (
   <button
-    className={`btn ${nulishCheck([theme, size])} ${twClasses(tw)}`}
     {...props}
+    className={`btn ${nulishCheck([theme, btnShape, size])} ${twClasses(tw)}`}
+    onClick={props.onClick}
   >
     {children}
   </button>
