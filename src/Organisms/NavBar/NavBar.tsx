@@ -12,7 +12,7 @@ type SearchListProps = {
 
 const computedPanelStyles = (show: boolean) => {
   const conditionalHide = show
-    ? ['block', 'h-screen', 'w-full', 'bg-base-100']
+    ? ['block', 'h-screen', 'w-full', 'bg-base-100', 'z-10']
     : ['hidden'];
   return flatenizeTw([
     ['panel', 'absolute', 'top-0', 'left-0', 'p-4'],
@@ -52,7 +52,7 @@ export const NavBar = () => {
   });
 
   return (
-    <section className="flex justify-between relative p-4">
+    <nav className="flex justify-between relative p-4">
       <Button
         tw={['bg-gray-400', 'border-gray-400', 'text-white']}
         onClick={() => setShowPanel(!showPanel)}
@@ -78,6 +78,6 @@ export const NavBar = () => {
           onClose={setShowPanel}
         />
       </div>
-    </section>
+    </nav>
   );
 };

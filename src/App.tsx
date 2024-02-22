@@ -1,5 +1,7 @@
-import { NavBar } from '@organisms/index';
 import flatenizeTw from '@utils/flatenizeTw';
+import { NavBar, TodayForecast } from '@organisms/index';
+import { TodayForecastProvider } from './Providers/TodayForecast';
+
 import './index.css';
 
 const mainClasses = flatenizeTw([['md:grid', 'md:grid-cols-6']]);
@@ -20,6 +22,9 @@ function App() {
     <main className={mainClasses}>
       <div className={sideBarClasses}>
         <NavBar />
+        <TodayForecastProvider>
+          <TodayForecast />
+        </TodayForecastProvider>
       </div>
       <div className={contentClasses}>
         <h2>Trabajanding...</h2>
