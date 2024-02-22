@@ -42,6 +42,9 @@
     "vitest": "^1.2.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "git add"
+    ]
   }
 }
