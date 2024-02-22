@@ -31,6 +31,14 @@ export default defineConfig({
         find: '@utils',
         replacement: new URL('./src/utils', import.meta.url).pathname,
       },
+      {
+        find: '@assets',
+        replacement: new URL('./src/assets', import.meta.url).pathname,
+      },
+      {
+        find: '@model',
+        replacement: new URL('./src/Model', import.meta.url).pathname,
+      },
     ],
   },
 });
