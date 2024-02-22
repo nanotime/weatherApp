@@ -1,25 +1,35 @@
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import { Button, Card, Input } from '@atoms/index';
+import flatenizeTw from '@utils/flatenizeTw';
+import { NavBar, TodayForecast } from '@organisms/index';
+import { TodayForecastProvider } from './Providers/TodayForecast';
+
 import './index.css';
+
+const mainClasses = flatenizeTw([['md:grid', 'md:grid-cols-6']]);
+
+const sideBarClasses = flatenizeTw([
+  ['md:col-span-2', 'md:bg-base-100', 'md:h-screen'],
+]);
+
+const contentClasses = flatenizeTw([
+  // upper grid classes
+  ['md:mt-3', 'md:col-span-4'],
+  // sub grid classes
+  ['md:grid', 'md:justify-center'],
+]);
 
 function App() {
   return (
-    <div>
-      <img src={reactLogo} className="logo" alt="logo" />
-      <img src={viteLogo} className="logo" alt="logo" />
-      <h1 className="text-3xl font-bold underline">Weather App</h1>
-      {/* <Button theme="btn-secondary">Click me</Button>
-      <Input placeholder="Enter text" theme="input-bordered" />
-
-      <Card tw={['bg-blue-950', 'rounded-sm']}>
-        <Card.Title>Card Title</Card.Title>
-        <p>Olakease</p>
-        <Card.Actions>
-          <Button>Button</Button>
-        </Card.Actions>
-      </Card> */}
-    </div>
+    <main className={mainClasses}>
+      <div className={sideBarClasses}>
+        <NavBar />
+        <TodayForecastProvider>
+          <TodayForecast />
+        </TodayForecastProvider>
+      </div>
+      <div className={contentClasses}>
+        <h2>Trabajanding...</h2>
+      </div>
+    </main>
   );
 }
 
