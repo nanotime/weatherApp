@@ -1,2 +1,2 @@
-export { Card } from './Card/Card';
+export { WeatherCard } from './Card/WeatherCard';
 export { SearchBar } from './SearchBar/SearchBar';
