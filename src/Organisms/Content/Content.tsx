@@ -1,5 +1,4 @@
-import { WeatherIcon } from '@/Atoms';
-import { WeatherCard } from '@/Molecules';
+import { WeatherIcon, WeatherCard } from '@/Atoms';
 import flatenizeTw from '@/utils/flatenizeTw';
 
 const contentClasses = flatenizeTw([
