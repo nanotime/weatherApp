@@ -1,4 +1,3 @@
-import { TodayForecastProvider } from '@/Providers/TodayForecast';
 import { NavBar, TodayForecast } from '..';
 import flatenizeTw from '@/utils/flatenizeTw';
 
@@ -10,9 +9,7 @@ export const Sidebar = () => {
   return (
     <div className={sideBarClasses}>
       <NavBar />
-      <TodayForecastProvider>
-        <TodayForecast />
-      </TodayForecastProvider>
+      <TodayForecast />
     </div>
   );
 };
