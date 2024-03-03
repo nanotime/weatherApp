@@ -1,4 +1,5 @@
-import { WeatherIcon, WeatherCard } from '@/Atoms';
+// import { WeatherIcon, WeatherCard } from '@/Atoms';
+import { WindStatus, WeatherForecast } from '@/Molecules';
 import flatenizeTw from '@/utils/flatenizeTw';
 
 const contentClasses = flatenizeTw([
@@ -8,36 +9,14 @@ const contentClasses = flatenizeTw([
   ['md:grid', 'md:grid-rows-3', 'md:justify-center'],
 ]);
 
-const forecast5Classes = flatenizeTw([
-  // xs grid
-  ['grid', 'grid-cols-2', 'gap-2', 'place-items-center'],
-  // sm grid
-  ['sm:grid-cols-3'],
-  ['lg:grid-cols-5'],
-]);
-
 export const Content = () => {
   return (
     <div className={contentClasses}>
-      <div id="5-day-forecast" className={forecast5Classes}>
-        <WeatherCard title="test" tempRange={['10', '20']}>
-          <WeatherIcon icon="Clear" />
-        </WeatherCard>
-        <WeatherCard title="test" tempRange={['10', '20']}>
-          <WeatherIcon icon="Thunderstorm" />
-        </WeatherCard>
-        <WeatherCard title="test" tempRange={['10', '20']}>
-          <WeatherIcon icon="Hail" />
-        </WeatherCard>
-        <WeatherCard title="test" tempRange={['10', '20']}>
-          <WeatherIcon icon="Hail" />
-        </WeatherCard>
-        <WeatherCard title="test" tempRange={['10', '20']}>
-          <WeatherIcon icon="Hail" />
-        </WeatherCard>
-      </div>
-      <div className="">
-        <h2>Trabajanding...</h2>
+      <WeatherForecast />
+
+      <div className="p-3">
+        <h3 className="text-3xl py-3">Today’s Hightlights</h3>
+        <WindStatus />
       </div>
     </div>
   );
