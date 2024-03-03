@@ -1,4 +1,7 @@
 /// <reference types="vitest" />
+/// <reference types="vite/client" />
+/// <reference types="vitest/globals" />
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -8,6 +11,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    setupFiles: './setupTests.ts',
   },
   resolve: {
     alias: [

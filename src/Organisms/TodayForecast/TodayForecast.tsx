@@ -1,12 +1,13 @@
-import { useContext } from 'react';
 import numeral from 'numeral';
 
 import { WeatherIcon } from '@atoms/index';
 import CloudBackground from '@assets/Cloud-background.png';
-import { TodayForecastCtx } from '@/Providers/TodayForecast';
+import { useWeather } from '@/Store/Weather';
 
 export const TodayForecast = () => {
-  const { todayForecast } = useContext(TodayForecastCtx);
+  const weather = useWeather(state => state.weather);
+  const mainForecast = useWeather(state => state.main);
+  const cityName = useWeather(state => state.name);
 
   return (
     <section id="today-forecast">
@@ -20,7 +21,7 @@ export const TodayForecast = () => {
           style={{ backgroundImage: `url(${CloudBackground})` }}
         />
 
-        <WeatherIcon icon={todayForecast.weather[0].main} tw={['absolute']} />
+        <WeatherIcon icon={weather[0].main} tw={['absolute']} />
       </div>
 
       <div
@@ -28,11 +29,9 @@ export const TodayForecast = () => {
         className="flex flex-col gap-5 text-center p-4 mb-4"
       >
         <h2 id="forecast-temperature" className="text-9xl">
-          {numeral(todayForecast.main.temp).format('0')}℃
+          {numeral(mainForecast.temp).format('0')}℃
         </h2>
-        <p className="text-4xl capitalize">
-          {todayForecast.weather[0].description}
-        </p>
+        <p className="text-4xl capitalize">{weather[0].description}</p>
       </div>
 
       <div
@@ -41,7 +40,7 @@ export const TodayForecast = () => {
       >
         <p className="text-xl">Today</p>
         <div className="divider divider-horizontal">•</div>
-        <p className="text-xl capitalize">{todayForecast.name}</p>
+        <p className="text-xl capitalize">{cityName}</p>
       </div>
     </section>
   );

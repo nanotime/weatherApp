@@ -1,7 +1,5 @@
-import { describe, test, expect, vi } from 'vitest';
 import { render, fireEvent } from '@testing-library/react';
 import { Input } from './Input';
-import '@testing-library/jest-dom/vitest';
 
 describe('Input', () => {
   test('renders input with placeholder', () => {
