@@ -17,7 +17,7 @@ export type WeatherData = {
       main: string;
       description: string;
       icon: string;
-    }
+    },
   ];
   clouds: {
     all: number;

@@ -5,6 +5,6 @@
  * @return {string} The joined string of non-undefined values
  */
 const nulishCheck = (values: Array<string | undefined>) =>
-  values.filter(value => value !== undefined).join(' ');
+  values.filter((value) => value !== undefined).join(' ');
 
 export default nulishCheck;

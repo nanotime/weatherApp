@@ -33,6 +33,7 @@
     "autoprefixer": "^10.4.17",
     "daisyui": "^4.6.1",
     "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "husky": "^9.0.11",

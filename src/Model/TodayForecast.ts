@@ -14,7 +14,7 @@ export type TodayForecast = {
       main: string;
       description: string;
       icon: string;
-    }
+    },
   ];
   main: {
     temp: number;

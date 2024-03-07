@@ -44,11 +44,11 @@ export const Input: FC<Props> = ({
       placeholder={placeholder ?? placeholder}
       className={`input ${nulishCheck([theme, size, status])} ${twClasses(tw)}`}
       value={innerValue}
-      onChange={e => {
+      onChange={(e) => {
         setInnerValue(e.target.value);
         props.onChange?.(e);
       }}
-      onBlur={e => {
+      onBlur={(e) => {
         setInnerValue(e.target.value);
         props.onBlur?.(e);
       }}

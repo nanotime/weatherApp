@@ -5,9 +5,9 @@ import CloudBackground from '@assets/Cloud-background.png';
 import { useWeather } from '@/Store/Weather';
 
 export const TodayForecast = () => {
-  const weather = useWeather(state => state.weather);
-  const mainForecast = useWeather(state => state.main);
-  const cityName = useWeather(state => state.name);
+  const weather = useWeather((state) => state.weather);
+  const mainForecast = useWeather((state) => state.main);
+  const cityName = useWeather((state) => state.name);
 
   return (
     <section id="today-forecast">
