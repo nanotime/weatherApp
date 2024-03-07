@@ -45,7 +45,7 @@ const SearchList: React.FC<SearchListProps> = ({ items, onClose }) => {
 export const NavBar = () => {
   const [showPanel, setShowPanel] = useState(false);
 
-  useKeyDown(ev => {
+  useKeyDown((ev) => {
     if (ev.key === 'Escape') {
       setShowPanel(false);
     }

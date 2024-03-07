@@ -11,10 +11,10 @@ const forecast5Classes = flatenizeTw([
 ]);
 
 export const WeatherForecast = () => {
-  const forecast5Days = useForecast(state => state.list);
+  const forecast5Days = useForecast((state) => state.list);
   return (
     <div id="5-day-forecast" className={forecast5Classes}>
-      {forecast5Days.map(day => {
+      {forecast5Days.map((day) => {
         return (
           <WeatherCard
             key={day.dt}

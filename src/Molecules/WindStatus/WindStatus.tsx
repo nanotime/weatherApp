@@ -3,7 +3,7 @@ import { AiFillLeftCircle } from 'react-icons/ai';
 import { useWeather } from '@/Store/Weather';
 
 export const WindStatus = () => {
-  const wind = useWeather(state => state.wind);
+  const wind = useWeather((state) => state.wind);
 
   return (
     <HightlightCard title="Wind status">

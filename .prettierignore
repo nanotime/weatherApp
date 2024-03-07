@@ -1,0 +1,10 @@
+build
+coverage
+node_modules
+*.md
+.config.ts
+.config.js
+.config.cjs
+__mocks__
+.husky
+.github
