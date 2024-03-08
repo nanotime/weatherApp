@@ -13,7 +13,7 @@ export const HightlightCard: FC<Props> = ({ children, ...props }) => (
       props.tw
     )}`}
   >
-    <h4>{props.title}</h4>
+    <h4 className="italic">{props.title}</h4>
     {children}
   </div>
 );

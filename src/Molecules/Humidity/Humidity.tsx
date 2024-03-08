@@ -5,7 +5,7 @@ export const Humidity = () => {
   const humidity = useWeather((s) => s.main.humidity);
 
   return (
-    <HightlightCard title="Humidity">
+    <HightlightCard tw={['mt-2', 'md:mt-0']} title="Humidity">
       <p className="text-6xl">{humidity}%</p>
       <div data-testid="humidity-bar">
         <div className="flex justify-between" data-testid="humidity-bar-labels">

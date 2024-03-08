@@ -54,7 +54,7 @@ export const NavBar = () => {
   return (
     <nav className="flex justify-between relative p-4">
       <Button
-        tw={['bg-gray-400', 'border-gray-400', 'text-white']}
+        tw={['bg-gray-400', 'border-gray-400', 'text-white', 'z-10']}
         onClick={() => setShowPanel(!showPanel)}
       >
         Search for places
