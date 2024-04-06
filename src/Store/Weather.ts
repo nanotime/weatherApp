@@ -43,3 +43,7 @@ export const useWeather = create<TodayForecast>()(() => ({
   name: 'Colonia Nativitas',
   cod: 200,
 }));
+
+export const setWeather = (weather: TodayForecast) => {
+  useWeather.setState({ ...weather });
+};

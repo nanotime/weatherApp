@@ -1,7 +1,7 @@
 import numeral from 'numeral';
 
-import { WeatherIcon } from '@atoms/index';
 import CloudBackground from '@assets/Cloud-background.png';
+import { WeatherIcon } from '@atoms/index';
 import { useWeather } from '@/Store/Weather';
 
 export const TodayForecast = () => {

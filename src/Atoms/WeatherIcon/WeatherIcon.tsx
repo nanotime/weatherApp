@@ -7,7 +7,7 @@ const IconUrlGetter = (icon: string) =>
 const Icons = new Map<string, string>([
   ['Clear', IconUrlGetter('Clear')],
   ['Hail', IconUrlGetter('Hail')],
-  ['HeavyCloud', IconUrlGetter('HeavyCloud')],
+  ['Clouds', IconUrlGetter('Clouds')],
   ['HeavyRain', IconUrlGetter('HeavyRain')],
   ['LightCloud', IconUrlGetter('LightCloud')],
   ['LightRain', IconUrlGetter('LightRain')],

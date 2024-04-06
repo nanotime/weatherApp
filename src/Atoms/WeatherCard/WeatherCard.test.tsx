@@ -6,7 +6,7 @@ describe('Card', () => {
     const tempRange = [20, 30];
     const dateTitle = '2024-03-04 03:00:00';
     const { getByText } = render(
-      <WeatherCard title={dateTitle} tempRange={tempRange}>
+      <WeatherCard locales="en-US" title={dateTitle} tempRange={tempRange}>
         <div>Test Children</div>
       </WeatherCard>
     );
