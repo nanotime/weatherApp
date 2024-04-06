@@ -10,7 +10,7 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
 
 const formatDate = (date: string, locales: string | readonly string[]) => {
   const locale: string = Array.isArray(locales) ? locales[0] : locales;
-  return new Date(date).toLocaleDateString(locale, {
+  return new Date(date).toLocaleDateString(locale || 'en-US', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',

@@ -201,3 +201,7 @@ export const useForecast = create<Forecast>()(() => ({
     sunset: 1709512971,
   },
 }));
+
+export const setForecast = (forecast: Forecast) => {
+  useForecast.setState({ ...forecast });
+};
