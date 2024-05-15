@@ -1,28 +1,34 @@
 import { FC } from 'react';
 import twClasses from '@/utils/twClasses';
+import weatherCodesMap from '@/utils/weatherCodesMap';
 
-const IconUrlGetter = (icon: string) =>
-  new URL(`../../assets/${icon}.png`, import.meta.url).pathname;
-
-const Icons = new Map<string, string>([
-  ['Clear', IconUrlGetter('Clear')],
-  ['Hail', IconUrlGetter('Hail')],
-  ['Clouds', IconUrlGetter('Clouds')],
-  ['HeavyRain', IconUrlGetter('LightRain')],
-  ['LightCloud', IconUrlGetter('LightCloud')],
-  ['LightRain', IconUrlGetter('LightRain')],
-  ['Rain', IconUrlGetter('LightRain')],
-  ['Shower', IconUrlGetter('Shower')],
-  ['Snow', IconUrlGetter('Snow')],
-  ['Sleet', IconUrlGetter('Sleet')],
-  ['Thunderstorm', IconUrlGetter('Thunderstorm')],
-]);
+const iconUrl = (icon: string, animated?: boolean) =>
+  animated
+    ? new URL(`../../assets/animated/${icon}.svg`, import.meta.url).pathname
+    : new URL(`../../assets/static/${icon}.svg`, import.meta.url).pathname;
 
 type Props = {
-  icon: string;
+  description: string;
   tw?: string[];
+  code: number;
+  animated?: boolean;
 };
 
-export const WeatherIcon: FC<Props> = ({ icon, tw }) => {
-  return <img src={Icons.get(icon)} alt={icon} className={twClasses(tw)} />;
+export const WeatherIcon: FC<Props> = ({ code, tw, description, animated }) => {
+  const findCode = (c: number) => c === code;
+  const icons = Array.from(weatherCodesMap.keys()) as string[];
+
+  return icons.map((icon) => {
+    const item = weatherCodesMap.get(icon)?.find(findCode);
+    if (item) {
+      return (
+        <img
+          key={`${icon}-${description}`}
+          src={iconUrl(icon, animated)}
+          alt={description}
+          className={twClasses(tw)}
+        />
+      );
+    }
+  });
 };

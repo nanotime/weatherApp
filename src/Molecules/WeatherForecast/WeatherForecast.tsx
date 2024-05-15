@@ -5,9 +5,9 @@ import { useAppConfigs } from '@/Store/AppConfigs';
 
 const forecast5Classes = flatenizeTw([
   // xs grid
-  ['grid', 'grid-cols-2', 'gap-2', 'place-items-center'],
+  ['grid', 'grid-cols-2', 'gap-2', 'place-items-center', 'p-2'],
   // sm grid
-  ['sm:grid-cols-3'],
+  ['sm:grid-cols-3', 'sm:p-0'],
   ['lg:grid-cols-5'],
 ]);
 
@@ -25,7 +25,11 @@ export const WeatherForecast = () => {
             locales={locales}
             tempRange={[day.main.temp_min, day.main.temp_max]}
           >
-            <WeatherIcon icon={day.weather[0].main} />
+            <WeatherIcon
+              code={day.weather[0].id}
+              description={day.weather[0].description}
+              tw={['w-full']}
+            />
           </WeatherCard>
         );
       })}
